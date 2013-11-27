@@ -1,0 +1,24 @@
+metadata :name        => "<%= @action_name %>",
+         :description => "<%= @description %>",
+         #:author     => "Jeremy Adams <jeremy@puppetlabs.com>",
+         #:license    => "Apache v2",
+         #:version    => "1.0",
+         #:url        => "www.puppetlabs.com",
+         :timeout     => 15
+
+action "run", :description => "<%= @description %>" do
+  display :always
+
+  output :status,
+         :description => "The exit code of the script",
+         :display_as  => "Return Value"
+
+  output :out,
+         :description => "The Output of the script on stdout",
+         :display_as  => "Output Channel"
+
+  output :err,
+         :description => "The Output of the script on stderr",
+         :display_as  => "Error Channel"
+
+end
