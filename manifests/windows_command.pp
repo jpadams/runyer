@@ -3,12 +3,12 @@
 
 define runyer::windows_command (
   $command, # the command to run
-  $description = "Runs ${command} on windows agents"
+  $description = "Runs ${command} on windows agents",
+  $action_name = $title
   ) {
 
   $ddl_file    = template('runyer/win_ddl.erb')
   $rb_file     = template('runyer/win_rb.erb')
-  $action_name = $title
    
   if $::kernel == 'windows' {
 
