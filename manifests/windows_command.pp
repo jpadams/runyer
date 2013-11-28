@@ -6,9 +6,10 @@ define runyer::windows_command (
   $description = "Runs ${command} on windows agents"
   ) {
 
-  $ddl_file = template('runyer/win_ddl.erb')
-  $rb_file  = template('runyer/win_rb.erb')
-
+  $ddl_file    = template('runyer/win_ddl.erb')
+  $rb_file     = template('runyer/win_rb.erb')
+  $action_name = $title
+   
   if $::kernel == 'windows' {
 
     file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${title}.ddl":
