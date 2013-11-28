@@ -3,12 +3,12 @@
 
 define runyer::posix_command (
   $command, # the command to run
-  $description = "Runs ${command} on posix agents"
+  $description = "Runs ${command} on posix agents",
+  $action_name = $title
   ) {
 
   $ddl_file    = template('runyer/posix_ddl.erb')
   $rb_file     = template('runyer/posix_rb.erb')
-  $action_name = $title
 
   # For the Unix/Linux agents and the Puppet Enterprise Master server
   if $::kernel != 'windows' {
