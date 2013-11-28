@@ -4,6 +4,8 @@ Automagically create mco/Live Management tasks for POSIX or Windows machines.
 
 Put stuff on master and agents. Use a group!
 
+POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
+
 
     class acts {
  
