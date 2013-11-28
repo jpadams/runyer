@@ -13,7 +13,7 @@ define runyer::posix_command (
   # For the Unix/Linux agents and the Puppet Enterprise Master server
   if $::kernel != 'windows' {
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${title}.ddl":
+    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
       ensure  => file,
       owner   => root,
       group   => root,
@@ -22,7 +22,7 @@ define runyer::posix_command (
       notify  => Service['pe-mcollective'],
     }
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${title}.rb":
+    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.rb":
       ensure  => file,
       owner   => root,
       group   => root,
