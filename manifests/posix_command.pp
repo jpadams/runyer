@@ -6,8 +6,8 @@ define runyer::posix_command (
   $description = "Runs ${command} on posix agents"
   ) {
 
-  $ddl_file = template('runyer/posix_ddl.erb')
-  $rb_file  = template('runyer/posix_rb.erb')
+  $ddl_file    = template('runyer/posix_ddl.erb')
+  $rb_file     = template('runyer/posix_rb.erb')
   $action_name = $title
 
   # For the Unix/Linux agents and the Puppet Enterprise Master server
