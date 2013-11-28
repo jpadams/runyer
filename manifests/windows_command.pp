@@ -12,7 +12,7 @@ define runyer::windows_command (
    
   if $::kernel == 'windows' {
 
-    file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${title}.ddl":
+    file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${action_name}.ddl":
       ensure  => file,
       owner   => Administrator,
       group   => Administrators,
@@ -21,7 +21,7 @@ define runyer::windows_command (
       notify  => Service['pe-mcollective'],
     }
 
-    file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${title}.rb":
+    file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${action_name}.rb":
       ensure  => file,
       owner   => Administrator,
       group   => Administrators,
@@ -38,7 +38,7 @@ define runyer::windows_command (
     $::puppet_server == $::hostname)
   {
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${title}.ddl":
+    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
       ensure  => file,
       owner   => root,
       group   => root,
@@ -47,7 +47,7 @@ define runyer::windows_command (
       notify  => Service['pe-mcollective'],
     }
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${title}.rb":
+    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.rb":
       ensure  => file,
       owner   => root,
       group   => root,
