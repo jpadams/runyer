@@ -6,6 +6,7 @@ Put stuff on master and agents. Use a group!
 
 POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
 
+No spaces allowed in title to keep filename and mco/LM sane.
 
     class acts {
  
