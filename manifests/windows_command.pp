@@ -1,8 +1,8 @@
 # Simply installs the Mcollective agent on the master and nodes.
+# No spaces allowed in title to keep filename and mco/LM sane.
 
 define runyer::windows_command (
-  $command,              # command to run
-  $action_name = $title, # no spaces allowed to keep filename and mco sane
+  $command, # the command to run
   $description = "Runs ${command} on windows agents"
   ) {
 
