@@ -2,7 +2,7 @@ runyer
 ======
 Automagically create mco/Live Management tasks for POSIX or Windows machines.
 
-Make modules with your desired actions. Classify master and agents. A Windows node with skip a POSIX action and vice versa.
+Make modules with your desired actions. Classify master and agents. A Windows node will skip a POSIX action and vice versa.
 
 POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
 
