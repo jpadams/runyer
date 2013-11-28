@@ -34,8 +34,8 @@ define runyer::posix_command (
 
   else {
 
-    notify { 'runyer::posix_command only supported on Linux master and Unix/Linux agent nodes': }
-
+    notify { "runyer::posix_command ${action_name} only supported on Linux master and Unix/Linux agent nodes": }
+  
   }
 
 }
