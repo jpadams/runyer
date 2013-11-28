@@ -1,8 +1,8 @@
 # Simply installs the Mcollective agent on the master and nodes.
 
 define runyer::windows_command (
-  $command,              # command to run
-  $action_name = $title, # no spaces allowed
+  $command, # the command to run
+  $action_name = $title,
   $description = "Runs ${command} on windows agents"
   ) {
 
