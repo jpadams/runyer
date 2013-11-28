@@ -22,3 +22,9 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
       }
  
     }
+
+After you run puppet agent, your nodes (including the master, if you listened to me above) will have the necessary ddl and rb files. Just browse to the Live Management tab and go! Alternatively, use the mco command line.
+
+    # su - peadmin
+    
+    $ mco rpc stuff run -I mywindowsnode
