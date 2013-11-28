@@ -18,7 +18,7 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
       }
  
       runyer::windows_command { 'stuff':
-        command => 'mkdir c:/foobar',
+        command => 'mkdir c:\foobar',
       }
  
     }
