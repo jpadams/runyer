@@ -6,7 +6,7 @@ Make modules with your desired actions. Classify master and agents. A Windows no
 
 POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
 
-**_No spaces allowed in title to keep filename and mco/LM sane._** For now anyway.
+**_No spaces allowed in $action_name param (defaults to $title) to keep filename and mco/LM sane._** For now anyway.
 
     class acts {
  
