@@ -59,7 +59,7 @@ define runyer::windows_command (
 
   else {
 
-    notify { 'runyer::windows_command only supported on Linux master and Windows agent nodes': }
+    notify { "runyer::windows_command ${action_name} only supported on Linux master and Windows agent nodes": }
 
   }
 
