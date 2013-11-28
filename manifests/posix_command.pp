@@ -8,6 +8,7 @@ define runyer::posix_command (
 
   $ddl_file = template('runyer/posix_ddl.erb')
   $rb_file  = template('runyer/posix_rb.erb')
+  $action_name = $title
 
   # For the Unix/Linux agents and the Puppet Enterprise Master server
   if $::kernel != 'windows' {
