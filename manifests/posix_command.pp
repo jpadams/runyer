@@ -4,7 +4,7 @@
 define runyer::posix_command (
   $command, # the command to run
   $description = "Runs ${command} on posix agents",
-  $action_name = $title
+  $action_name = $title,
   $ensure      = 'present' # 'present' or 'absent'
   ) {
 
