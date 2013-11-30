@@ -5,9 +5,11 @@ define runyer::posix_command (
   $command, # the command to run
   $description = "Runs ${command} on posix agents",
   $action_name = $title
+  $ensure      = 'present' # 'present' or 'absent'
   ) {
 
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
+  validate_re($ensure, ['present', 'absent'], '$ensure param must be \'absent\' or \'present\'')
   $ddl_file    = template('runyer/posix_ddl.erb')
   $rb_file     = template('runyer/posix_rb.erb')
 
@@ -15,7 +17,7 @@ define runyer::posix_command (
   if $::kernel != 'windows' {
 
     file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
-      ensure  => file,
+      ensure  => $ensure,
       owner   => root,
       group   => root,
       mode    => '0644',
@@ -24,7 +26,7 @@ define runyer::posix_command (
     }
 
     file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.rb":
-      ensure  => file,
+      ensure  => $ensure,
       owner   => root,
       group   => root,
       mode    => '0644',
