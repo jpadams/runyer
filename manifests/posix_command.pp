@@ -13,7 +13,7 @@ define runyer::posix_command (
   $ddl_file    = template('runyer/posix_ddl.erb')
   $rb_file     = template('runyer/posix_rb.erb')
 
-  # For the Unix/Linux agents and the Puppet Enterprise Master server
+  # For the Unix/Linux agents and the Puppet Enterprise Master Linux server
   if $::kernel != 'windows' {
 
     file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
