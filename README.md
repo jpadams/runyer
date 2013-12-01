@@ -29,7 +29,7 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
  
       runyer::windows_command { 'gone':
         ensure  => 'absent',
-        command => 'mkdir c:\outta_here',
+        command => 'mkdir c:\you_later',
       }
   
     }
