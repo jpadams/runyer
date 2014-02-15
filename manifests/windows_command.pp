@@ -37,8 +37,9 @@ define runyer::windows_command (
 
   # For the Puppet Enterprise Master server
   elsif $::kernel == 'Linux' and
-    ($::puppet_server == $::fqdn or
-     $::puppet_server == $::hostname)
+    ($settings::server == $::fqdn or
+     $settings::server == $::hostname or
+     $settings::server == $::ec2_hostname)
   {
 
     file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
