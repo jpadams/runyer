@@ -17,6 +17,8 @@ define runyer::windows_command (
 
     file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${action_name}.ddl":
       ensure  => $ensure,
+      owner   => Administrator,
+      group   => Administrators,
       mode    => '0644',
       content => $ddl_file,
       notify  => Service['pe-mcollective'],
@@ -24,6 +26,8 @@ define runyer::windows_command (
 
     file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${action_name}.rb":
       ensure  => $ensure,
+      owner   => Administrator,
+      group   => Administrators,
       mode    => '0644',
       content => $rb_file,
       notify  => Service['pe-mcollective'],
