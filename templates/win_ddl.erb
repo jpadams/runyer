@@ -10,16 +10,15 @@ action "run", :description => '<%= @description %>' do
   display :always
 
   output :status,
-         :description => "Status after attempt to execute run",
-         :display_as  => "Service Status"
+         :description => "The exit code of the script",
+         :display_as  => "Return Value"
 
-#  output :out,
-#         :description => "No stdout currently on Windows",
-#         :display_as  => "stdout",
-#         :default     => "stdout unsupported"
+  output :out,
+         :description => "The Output of the script on stdout",
+         :display_as  => "Output Channel"
 
   output :err,
-         :description => "Error messages",
-         :display_as  => "stderr"
+         :description => "The Output of the script on stderr",
+         :display_as  => "Error Channel"
 
 end
