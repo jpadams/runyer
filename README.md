@@ -4,7 +4,7 @@ Automagically create mco/Live Management tasks for POSIX or Windows machines.
 
 Make modules with your desired actions. Classify master and agents. A Windows node will skip a POSIX action and vice versa.
 
-POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
+POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget! [Update: This just got fixed and will be included in PE 3.2.2]
 
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
 
