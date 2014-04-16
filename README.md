@@ -41,3 +41,5 @@ After you run puppet agent, your nodes (including the master, if you listened to
     # su - peadmin
     
     $ mco rpc stuff run -I mywindowsnode
+
+
