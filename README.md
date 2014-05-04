@@ -9,7 +9,7 @@ Make modules (for example see my 'acts' module's linux.pp and win.pp below) with
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
 ```puppet
 # a simple class with two actions. apply to master and linux agents.
-class acts {
+class notwords {
   include runyer
 
   runyer::nix_command { 'ls':
