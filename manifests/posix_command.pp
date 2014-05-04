@@ -6,7 +6,7 @@ define runyer::posix_command (
   $description = "Runs ${command} on posix agents",
   $action_name = $title,
   $ensure      = 'present' # 'present' or 'absent'
-  ) {
+  ) inherits ::runyer {
 
   if ! defined(Class['runyer']) {
     include runyer

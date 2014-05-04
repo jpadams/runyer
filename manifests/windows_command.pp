@@ -6,7 +6,7 @@ define runyer::windows_command (
   $description = "Runs ${command} on windows agents",
   $action_name = $title,
   $ensure      = 'present' # 'present' or 'absent'
-  ) {
+  ) inherits ::runyer {
 
   if ! defined(Class['runyer']) {
     include runyer
