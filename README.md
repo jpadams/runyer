@@ -21,7 +21,7 @@ class acts {
   }
 }
 ```
-A more complicated example:
+A more complicated example (repo <https://github.com/jpadams/acts>):
 ```puppet
 # init.pp for defaults
 class acts {
