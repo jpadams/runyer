@@ -11,9 +11,10 @@ action "run", :description => '<%= @description %>' do
 
   <% if @args != '' %>
   input  :args,
-         :prompt      => 'Arguments',
+         :description => "Optional arguments to the command",
+         :prompt      => "Arguments",
          :type        => :string,
-	       :validation  => '^.+$',
+         :validation  => '^.+$',
          :optional    => true,
          :maxlength   => 255
   <% end %>
