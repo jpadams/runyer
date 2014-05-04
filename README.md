@@ -5,7 +5,6 @@ For PE 3.2.x and above
 Automagically create mco/Live Management tasks for *nix or Windows machines.
 
 Make modules (for example see my 'acts' module's linux.pp and win.pp below) with your desired actions. Classify master and agents. A Windows node will skip a *nix action and vice versa.
-=======
 
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
 ```puppet
