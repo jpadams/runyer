@@ -11,7 +11,7 @@ action "run", :description => '<%= @description %>' do
  
   <% if @args != '' %>
   <%= "input  :args,
-         :prompt      => "Arguments",
+         :prompt      => 'Arguments',
          :type        => :string,
 	       :validation  => '^.+$',
          :optional    => true,
