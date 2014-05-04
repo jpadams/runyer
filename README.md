@@ -10,6 +10,8 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
 ```puppet
 # a simple acts class
 class acts {
+  
+  include runyer
 
   runyer::posix_command { 'ls':
     command => 'ls -al',
