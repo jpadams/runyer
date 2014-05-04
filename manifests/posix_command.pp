@@ -15,7 +15,7 @@ define runyer::posix_command (
   ) {
 
   if ! defined(Class['runyer']) {
-    include runyer
+    include ::runyer
   }
 
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
