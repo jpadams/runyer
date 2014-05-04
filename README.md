@@ -10,7 +10,6 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
 ```puppet
 # a simple class with two actions. apply to master and linux agents.
 class acts {
-  
   include runyer
 
   runyer::posix_command { 'ls':
@@ -20,7 +19,6 @@ class acts {
   runyer::posix_command { 'du':
     command => 'du -k',
   }
-
 }
 ```
 A more complicated example:
@@ -40,7 +38,7 @@ class acts {
   include acts::linux
   include acts::win
 }
-
+======
 # linux.pp for the linux nodes
 class acts::linux {
   include acts
@@ -53,7 +51,7 @@ class acts::linux {
     command => 'du -k',
   }
 }
-
+======
 # win.pp for the windows nodes
 class acts::win {
   include acts
@@ -71,7 +69,6 @@ class acts::win {
     ensure  => 'absent',
     command => 'mkdir c:\you_later',
   }
-  
 }
 ```
 
