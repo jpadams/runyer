@@ -7,7 +7,35 @@ Make modules (for example see my 'acts' module's linux.pp and win.pp below) with
 POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
 
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
+```puppet
+# a simple acts class
+class acts {
 
+  runyer::posix_command { 'ls':
+    command => 'ls -al',
+  }
+
+  runyer::posix_command { 'du':
+    command => 'du -k',
+  }
+
+  runyer::windows_command { 'stuff':
+    command => 'mkdir c:\foobar',
+  }
+
+  runyer::windows_command { 'stuff and nonsense':
+    command     => 'mkdir c:\jaberwocky',
+    action_name => 's_and_n',
+  }
+
+  runyer::windows_command { 'gone':
+    ensure  => 'absent',
+    command => 'mkdir c:\you_later',
+  }
+
+}
+```
+A more complicated example:
 ```puppet
 # init.pp for defaults and the master
 class acts {
