@@ -6,7 +6,7 @@ module MCollective
       end
 
       action "run" do
-        command = '<%= @cmd_prefix -%> <%= @command %>'
+        command = '<%= (@cmd_prefix+' '+@command).strip %>'
         reply[:status] = run(command,:stdout => :out, :stderr => :err, :chomp => true)
       end
     end
