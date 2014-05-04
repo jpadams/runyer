@@ -9,7 +9,7 @@ metadata :name        => '<%= @action_name %>',
 action "run", :description => '<%= @description %>' do
   display :always
 
-  <% if @args != '' %>
+  <% if @args == true %>
   input  :args,
          :description => "Optional arguments to the command",
          :prompt      => "Arguments",

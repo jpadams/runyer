@@ -12,7 +12,7 @@ define runyer::nix_command (
     $version      = $runyer::version,
     $project_url  = $runyer::project_url,
     $timeout      = $runyer::timeout,
-    $args         = '',
+    $args         = false,
   ) {
 
   # The base class must be included first because it is used by parameter defaults
