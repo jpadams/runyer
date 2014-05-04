@@ -6,12 +6,12 @@ define runyer::windows_command (
     $description  = "Runs ${command} on windows agents",
     $action_name  = $title,
     $ensure       = 'present', # 'present' or 'absent'
-    $author_name  = $::runyer::author_name,
-    $author_email = $::runyer::author_email,
-    $license      = $::runyer::license,
-    $version      = $::runyer::version,
-    $project_url  = $::runyer::project_url,
-    $timeout      = $::runyer::timeout,
+    $author_name  = $runyer::author_name,
+    $author_email = $runyer::author_email,
+    $license      = $runyer::license,
+    $version      = $runyer::version,
+    $project_url  = $runyer::project_url,
+    $timeout      = $runyer::timeout,
   ) {
 
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
