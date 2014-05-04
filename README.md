@@ -39,7 +39,6 @@ class acts {
 }
 ```
 ```puppet
-======
 # master.pp for the master
 class acts::master {
   include acts::linux
