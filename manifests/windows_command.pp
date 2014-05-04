@@ -14,6 +14,11 @@ define runyer::windows_command (
     $timeout      = $runyer::timeout,
   ) {
 
+  # The base class must be included first because it is used by parameter defaults
+  if ! defined(Class['runyer']) {
+    fail('You must include the runyer base class before using any runyer defined resources')
+  }
+
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
   validate_re($ensure, ['present', 'absent'], '$ensure param must be \'absent\' or \'present\'')
   $ddl_file    = template('runyer/ddl.erb')
