@@ -14,10 +14,6 @@ define runyer::posix_command (
     $timeout      = $::runyer::timeout,
   ) {
 
-  if ! defined(Class['runyer']) {
-    include ::runyer
-  }
-
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
   validate_re($ensure, ['present', 'absent'], '$ensure param must be \'absent\' or \'present\'')
   $ddl_file    = template('runyer/ddl.erb')
