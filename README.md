@@ -23,7 +23,7 @@ class acts {
 ```
 A more complicated example:
 ```puppet
-# init.pp for defaults and the master
+# init.pp for defaults
 class acts {
   #set your param defaults here or use runyer's defaults
   #include runyer
@@ -35,6 +35,12 @@ class acts {
     project_url  => 'http://www.puppetlabs.com',
     timeout      => 25,
   }
+  include acts::linux
+  include acts::win
+}
+======
+# master.pp for the master
+class acts::master {
   include acts::linux
   include acts::win
 }
