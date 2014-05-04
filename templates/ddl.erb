@@ -1,6 +1,6 @@
 metadata :name        => '<%= @action_name %>',
          :description => '<%= @description %>',
-         :author      => '<%= @author_name+" "+@author_email %>',
+         :author      => '<%= @author_name -%> <%=@author_email %>',
          :license     => '<%= @license %>',
          :version     => '<%= @version %>', 
          :url         => '<%= @project_url %>',
