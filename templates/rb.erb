@@ -4,8 +4,8 @@ module MCollective
       activate_when do
         <%= @activate_condition %> 
       end
+
       action "run" do
-        
         command = '<%= @command %>'
         if MCollective::Util.windows?
 	        command = "cmd /c #{command}"
