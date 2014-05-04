@@ -26,7 +26,9 @@ A more complicated example:
 # init.pp for defaults
 class acts {
   #set your param defaults here or use runyer's defaults
+  
   #include runyer
+  
   class { 'runyer':
     author_name  => 'Jeremy Adams',
     author_email => 'jeremy@puppetlabs.com',
@@ -35,8 +37,6 @@ class acts {
     project_url  => 'http://www.puppetlabs.com',
     timeout      => 25,
   }
-  include acts::linux
-  include acts::win
 }
 ======
 # master.pp for the master
