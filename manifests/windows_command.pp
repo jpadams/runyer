@@ -2,11 +2,17 @@
 # No spaces allowed in $action_name (defaults to $title) to keep filename and mco/LM sane.
 
 define runyer::windows_command (
-  $command, # the command to run
-  $description = "Runs ${command} on windows agents",
-  $action_name = $title,
-  $ensure      = 'present' # 'present' or 'absent'
-  ) inherits ::runyer {
+    $command, # the command to run
+    $description  = "Runs ${command} on windows agents",
+    $action_name  = $title,
+    $ensure       = 'present', # 'present' or 'absent'
+    $author_name  = $::runyer::author_name,
+    $author_email = $::runyer::author_email,
+    $license      = $::runyer::license,
+    $version      = $::runyer::version,
+    $project_url  = $::runyer::project_url,
+    $timeout      = $::runyer::timeout,
+  ) {
 
   if ! defined(Class['runyer']) {
     include runyer
