@@ -37,13 +37,16 @@ class acts {
     timeout      => 25,
   }
 }
+```
+```puppet
 ======
 # master.pp for the master
 class acts::master {
   include acts::linux
   include acts::win
 }
-======
+```
+```puppet
 # linux.pp for the linux nodes
 class acts::linux {
   include acts
@@ -67,7 +70,8 @@ class acts::linux {
     timeout     => 200,
   }
 }
-======
+```
+```puppet
 # win.pp for the windows nodes
 class acts::win {
   include acts
