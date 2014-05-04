@@ -8,17 +8,15 @@ metadata :name        => '<%= @action_name %>',
 
 action "run", :description => '<%= @description %>' do
   display :always
- 
+
   <% if @args != '' %>
-  <%= "input  :args,
+  input  :args,
          :prompt      => 'Arguments',
          :type        => :string,
 	       :validation  => '^.+$',
          :optional    => true,
          :maxlength   => 255
-  %>
   <% end %>
-
   output :status,
          :description => "The exit code of the script",
          :display_as  => "Return Value"
