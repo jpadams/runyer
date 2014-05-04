@@ -6,11 +6,7 @@ module MCollective
       end
 
       action "run" do
-        command = '<%= @command %>'
-        if MCollective::Util.windows?
-	        command = "cmd /c #{command}"
-        end
-
+        command = '<%= @cmd_prefix -%> <%= @command %>'
         reply[:status] = run(command,:stdout => :out, :stderr => :err, :chomp => true)
       end
     end

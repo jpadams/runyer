@@ -23,6 +23,7 @@ define runyer::nix_command (
   validate_re($ensure, ['present', 'absent'], 'ensure param must be \'absent\' or \'present\'')
   validate_re($timeout, '^\d*$', 'timeout param must be an integer (number of seconds)')
   $activate_condition = 'Facts["kernel"] != "windows"'
+  $cmd_prefix = ''
   $ddl_file    = template('runyer/ddl.erb')
   $rb_file     = template('runyer/rb.erb')
 
