@@ -1,10 +1,10 @@
 runyer
 ======
+For PE 3.2.x and above
+
 Automagically create mco/Live Management tasks for POSIX or Windows machines.
 
 Make modules (for example see my 'acts' module's linux.pp and win.pp below) with your desired actions. Classify master and agents. A Windows node will skip a POSIX action and vice versa.
-
-POSIX nodes can return the results of stdout. Windows nodes can't right now. Windows is fire and forget!
 
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
 ```puppet
