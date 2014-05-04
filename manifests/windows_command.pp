@@ -21,6 +21,7 @@ define runyer::windows_command (
 
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
   validate_re($ensure, ['present', 'absent'], '$ensure param must be \'absent\' or \'present\'')
+  $activate_condition = 'Facts["kernel"] == "windows"'
   $ddl_file    = template('runyer/ddl.erb')
   $rb_file     = template('runyer/rb.erb')
    
