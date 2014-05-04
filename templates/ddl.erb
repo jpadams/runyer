@@ -1,0 +1,24 @@
+metadata :name        => '<%= @action_name %>',
+         :description => '<%= @description %>',
+         :author      => '<%= @author_name+" "+@author_email %>',
+         :license     => '<%= @license %>',
+         :version     => '<%= @version %>', 
+         :url         => '<%= @project_url %>',
+         :timeout     => '<%= @timeout %>'
+
+action "run", :description => '<%= @description %>' do
+  display :always
+
+  output :status,
+         :description => "The exit code of the script",
+         :display_as  => "Return Value"
+
+  output :out,
+         :description => "The Output of the script on stdout",
+         :display_as  => "Output Channel"
+
+  output :err,
+         :description => "The Output of the script on stderr",
+         :display_as  => "Error Channel"
+
+end

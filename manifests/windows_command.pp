@@ -8,10 +8,14 @@ define runyer::windows_command (
   $ensure      = 'present' # 'present' or 'absent'
   ) {
 
+  if ! defined(Class['runyer']) {
+    include runyer
+  }
+
   validate_re($action_name, '^\S*$', '$action_name param may not contain spaces')
   validate_re($ensure, ['present', 'absent'], '$ensure param must be \'absent\' or \'present\'')
-  $ddl_file    = template('runyer/win_ddl.erb')
-  $rb_file     = template('runyer/win_rb.erb')
+  $ddl_file    = template('runyer/ddl.erb')
+  $rb_file     = template('runyer/rb.erb')
    
   if $::kernel == 'windows' {
 
