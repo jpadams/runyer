@@ -7,6 +7,7 @@ module MCollective
 
       action "run" do
         command = '<%= (@cmd_prefix+' '+@command).strip %>'
+        command = (command +' '+request[:args]).strip
         reply[:status] = run(command,:stdout => :out, :stderr => :err, :chomp => true)
       end
     end
