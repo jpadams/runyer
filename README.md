@@ -25,9 +25,10 @@ A more complicated example (repo <https://github.com/jpadams/acts>):
 ```puppet
 # init.pp for defaults
 class acts {
-  #set your param defaults here or use runyer's defaults
-  
+  # use runyer's defaults
   #include runyer
+
+  # or set your param defaults here
   class { 'runyer':
     author_name  => 'Jeremy Adams',
     author_email => 'jeremy@puppetlabs.com',
