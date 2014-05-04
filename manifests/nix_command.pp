@@ -1,9 +1,9 @@
 # Simply installs the Mcollective agent on the master and nodes.
 # No spaces allowed in $action_name (defaults to $title) to keep filename and mco/LM sane.
 
-define runyer::posix_command (
+define runyer::nix_command (
     $command, # the command to run
-    $description  = "Runs ${command} on posix agents",
+    $description  = "Runs ${command} on *nix agents",
     $action_name  = $title,
     $ensure       = 'present', # 'present' or 'absent'
     $author_name  = $runyer::author_name,
@@ -49,7 +49,7 @@ define runyer::posix_command (
   }
 
   else {
-    notify { "runyer::posix_command ${action_name} only supported on Linux master and Unix/Linux agent nodes": }
+    notify { "runyer::nix_command ${action_name} only supported on Linux master and Unix/Linux agent nodes": }
   }
 
 }
