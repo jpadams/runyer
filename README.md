@@ -8,7 +8,7 @@ POSIX nodes can return the results of stdout. Windows nodes can't right now. Win
 
 **No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
 ```puppet
-# a simple acts class
+# a simple class with two actions. apply to master and linux agents.
 class acts {
   
   include runyer
