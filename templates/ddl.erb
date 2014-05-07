@@ -14,9 +14,9 @@ action "run", :description => '<%= @description %>' do
          :description => "Optional arguments to the command",
          :prompt      => "Arguments",
          :type        => :string,
-         :validation  => '^.+$',
+         :validation  => '<%= @validation %>',
          :optional    => true,
-         :maxlength   => 255
+         :maxlength   => <%= @args_length %> 
   <% end %>
   output :status,
          :description => "The exit code of the script",

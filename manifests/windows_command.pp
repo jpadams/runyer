@@ -12,6 +12,8 @@ define runyer::windows_command (
     $version      = $runyer::version,
     $project_url  = $runyer::project_url,
     $timeout      = $runyer::timeout,
+    $validation   = $runyer::validation,
+    $args_length  = $runyer::args_length,
     $args         = false,
   ) {
 
@@ -23,6 +25,7 @@ define runyer::windows_command (
   validate_re($action_name, '^\S*$', 'action_name param may not contain spaces')
   validate_re($ensure, ['present', 'absent'], 'ensure param must be \'absent\' or \'present\'')
   validate_re($timeout, '^\d*$', 'timeout param must be an integer (number of seconds)')
+  validate_bool($args)
   $activate_condition = 'Facts["kernel"] == "windows"'
   $cmd_prefix = 'cmd /c'
   $ddl_file    = template('runyer/ddl.erb')
