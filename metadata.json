@@ -91,9 +91,10 @@
   "version": "1.0.0",
   "source": "git://github.com/jpadams/runyer",
   "author": "Jeremy Adams",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "summary": "Automagically create mco/Live Management tasks for *nix or Windows machines.",
   "project_page": "https://github.com/jpadams/runyer",
+  "issues_url": "https://github.com/jpadams/runyer/issues",
   "dependencies": [
 
   ]
