@@ -26,7 +26,7 @@ define runyer::windows_command (
   $cmd_prefix = 'cmd /c'
   $ddl_file    = template('runyer/ddl.erb')
   $rb_file     = template('runyer/rb.erb')
-   
+
   if $::kernel == 'windows' {
 
     file { "C:/ProgramData/PuppetLabs/mcollective/etc/plugins/mcollective/agent/${action_name}.ddl":
@@ -50,10 +50,11 @@ define runyer::windows_command (
   }
 
   # For the Puppet Enterprise Master server
-  elsif $::kernel == 'Linux' and
-    ($settings::server == $::fqdn or
-     $settings::server == $::hostname or
-     $settings::server == $::ec2_hostname)
+  elsif $::kernel == 'Linux' and (
+    $settings::server == $::fqdn or
+    $settings::server == $::hostname or
+    $settings::server == $::ec2_hostname
+  )
   {
 
     file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
