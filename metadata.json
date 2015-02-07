@@ -84,7 +84,7 @@
   "requirements": [
     {
       "name": "pe",
-      "version_requirement": ">=3.2.x"
+      "version_requirement": ">= 3.2.0"
     }
   ],
   "name": "jpadams-runyer",
