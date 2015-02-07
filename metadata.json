@@ -88,7 +88,7 @@
     }
   ],
   "name": "jpadams-runyer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "git://github.com/jpadams/runyer",
   "author": "Jeremy Adams",
   "license": "Apache-2.0",
