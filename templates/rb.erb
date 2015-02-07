@@ -2,12 +2,12 @@ module MCollective
   module Agent
     class <%= @action_name.capitalize %><RPC::Agent
       activate_when do
-        <%= @activate_condition %> 
+        <%= @activate_condition %>
       end
 
       action "run" do
         command = '<%= (@cmd_prefix+' '+@command).strip %>'
-        reply[:status] = run(command,:stdout => :out, :stderr => :err, :chomp => true)
+        reply[:status] = run(command,:stdout=>:out,:stderr=>:err,:chomp=>true)
       end
     end
   end

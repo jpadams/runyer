@@ -4,9 +4,13 @@ For PE 3.2.x and above
 
 Automagically create mco/Live Management tasks for *nix or Windows machines.
 
-Make modules (for example see my 'acts' module's linux.pp and win.pp below) with your desired actions. Classify master and agents. A Windows node will skip a *nix action and vice versa.
+Make modules (for example see my 'acts' module's linux.pp and win.pp below)
+with your desired actions. Classify master and agents. A Windows node will
+skip a *nix action and vice versa.
 
-**No spaces allowed in $action_name param (defaults to resource $title) to keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).** For now anyway.
+**No spaces allowed in $action_name param (defaults to resource $title) to
+keep filename and mco/LM sane. Best to use [a-z] and '_' (underscore).**
+For now anyway.
 ```puppet
 # a simple class with two actions. apply to master and linux agents.
 class notwords {
@@ -54,7 +58,7 @@ class acts::linux {
   runyer::nix_command { 'ls':
     command => 'ls -al',
   }
- 
+
   runyer::nix_command { 'du':
     command => 'du -k',
   }
@@ -64,7 +68,7 @@ class acts::linux {
     author_name => 'Leonhard Euler',
     # these two params will come from the defaults set in init.pp of acts
     # author_email => 'jeremy@puppetlabs.com',
-    # license      => 'Apache v2',
+    # license      => 'Apache-2.0',
     version     => '0.0.1',
     project_url => 'http://www.projecteuler.net',
     timeout     => 200,
@@ -75,16 +79,16 @@ class acts::linux {
 # win.pp for the windows nodes
 class acts::win {
   include acts
- 
+
   runyer::windows_command { 'stuff':
     command => 'mkdir c:\foobar',
   }
-      
+
   runyer::windows_command { 'stuff and nonsense':
     command     => 'mkdir c:\jaberwocky',
     action_name => 's_and_n',
   }
- 
+
   runyer::windows_command { 'gone':
     ensure  => 'absent',
     command => 'mkdir c:\you_later',
@@ -92,10 +96,12 @@ class acts::win {
 }
 ```
 
-After you run puppet agent, your nodes (including the master, if you listened to me above) will have the necessary ddl and rb files. Just browse to the Live Management tab and go! Alternatively, use the mco command line.
+After you run puppet agent, your nodes (including the master, if you listened
+to me above) will have the necessary ddl and rb files. Just browse to the Live
+Management tab and go! Alternatively, use the mco command line.
 
     # su - peadmin
-    
+
     $ mco rpc stuff run -I mywindowsnode
 
 
