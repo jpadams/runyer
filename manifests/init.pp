@@ -1,5 +1,5 @@
 # Basic metadata and settings are kept here.
-# Include this class or declare it to override defaults. 
+# Include this class or declare it to override defaults.
 
 class runyer (
     $author_name  = 'anonymous',
