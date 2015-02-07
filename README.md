@@ -68,7 +68,7 @@ class acts::linux {
     author_name => 'Leonhard Euler',
     # these two params will come from the defaults set in init.pp of acts
     # author_email => 'jeremy@puppetlabs.com',
-    # license      => 'Apache v2',
+    # license      => 'Apache-2.0',
     version     => '0.0.1',
     project_url => 'http://www.projecteuler.net',
     timeout     => 200,
