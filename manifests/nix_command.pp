@@ -1,17 +1,17 @@
 # Simply installs the Mcollective agent on the master and nodes.
-# No spaces allowed in $action_name (defaults to $title) to keep filename and mco/LM sane.
+# No spaces allowed in $action_name (defaults to $title) to keep filename and mco sane.
 
 define runyer::nix_command (
-    $command, # the command to run
-    $description  = "Runs ${command} on *nix agents",
-    $action_name  = $title,
-    $ensure       = 'present', # 'present' or 'absent'
-    $author_name  = $runyer::author_name,
-    $author_email = $runyer::author_email,
-    $license      = $runyer::license,
-    $version      = $runyer::version,
-    $project_url  = $runyer::project_url,
-    $timeout      = $runyer::timeout,
+    String $command, # the command to run
+    String $description               = "Runs ${command} on *nix agents",
+    String $action_name               = $title,
+    Enum['present', 'absent'] $ensure = 'present',
+    String $author_name               = $runyer::author_name,
+    String $author_email              = $runyer::author_email,
+    String $license                   = $runyer::license,
+    String $version                   = $runyer::version,
+    String $project_url               = $runyer::project_url,
+    Integer $timeout                  = $runyer::timeout,
   ) {
 
   # The base class must be included first because it is used by parameter defaults
@@ -20,32 +20,30 @@ define runyer::nix_command (
   }
 
   validate_re($action_name, '^\S*$', 'action_name param may not contain spaces')
-  validate_re($ensure, ['present', 'absent'], 'ensure param must be \'absent\' or \'present\'')
-  validate_re($timeout, '^\d*$', 'timeout param must be an integer (number of seconds)')
   $activate_condition = 'Facts["kernel"] != "windows"'
   $cmd_prefix = ''
-  $ddl_file    = template('runyer/ddl.erb')
-  $rb_file     = template('runyer/rb.erb')
+  $ddl_file = template('runyer/ddl.erb')
+  $rb_file = template('runyer/rb.erb')
 
   # For the Unix/Linux agents and the Puppet Enterprise Master Linux server
   if $::kernel != 'windows' {
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.ddl":
+    file { "/opt/puppetlabs/mcollective/plugins/mcollective/agent/${action_name}.ddl":
       ensure  => $ensure,
       owner   => root,
       group   => root,
       mode    => '0644',
       content => $ddl_file,
-      notify  => Service['pe-mcollective'],
+      notify  => Service['mcollective'],
     }
 
-    file { "/opt/puppet/libexec/mcollective/mcollective/agent/${action_name}.rb":
+    file { "/opt/puppetlabs/mcollective/plugins/mcollective/agent/${action_name}.rb":
       ensure  => $ensure,
       owner   => root,
       group   => root,
       mode    => '0644',
       content => $rb_file,
-      notify  => Service['pe-mcollective'],
+      notify  => Service['mcollective'],
     }
 
   }
